@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Inherit Spring Boot's dependencyManagement (library versions) and plugin configuration -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.16</version>
+        <relativePath/> <!-- look up the parent in the Maven repository, not on disk -->
+    </parent>
+
+    <groupId>com.ecommerce</groupId>
+    <artifactId>ecommerce-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <!-- pom packaging: this module produces no jar; it only aggregates modules and shares config -->
+    <packaging>pom</packaging>
+
+    <name>ecommerce-parent</name>
+    <description>Parent POM for the e-commerce microservices training project</description>
+
+    <properties>
+        <java.version>21</java.version>
+    </properties>
+
+    <!-- The reactor: everything built by ./mvnw from the root -->
+    <modules>
+        <module>services/product-service</module>
+    </modules>
+
+</project>
