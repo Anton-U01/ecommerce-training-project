@@ -8,6 +8,7 @@ docs/learning/
 # ---- Secrets / local env ----
 .env
 .env.*
+!.env.example
 *.pem
 *.key
 
