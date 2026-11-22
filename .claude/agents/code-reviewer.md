@@ -31,7 +31,7 @@ Look for:
 - **Real credentials:** passwords, API keys and tokens (e.g. `ghp_`, `github_pat_`, `AKIA`, `sk-`, `xox`, JWTs `eyJ...`), private keys (`-----BEGIN ... PRIVATE KEY-----`), connection strings with embedded passwords, SMTP credentials for a real provider, and kubeconfig files
 - **Hardcoded secrets in config:** values in `application*.yml/properties`, `docker-compose*.yml`, `infra/k8s/*` (`Secret` manifests with real base64 values) and `.github/workflows/*` (secrets written inline instead of `${{ secrets.X }}` or `GITHUB_TOKEN`)
 - **Files that must never be committed:** `.env*` (except `.env.example` with placeholder values), `*.pem`, `*.key`, `*.p12`, `*.jks`, `kubeconfig`, `credentials*`, IDE folders containing data sources (`.idea/dataSources*`)
-- **Private learning files:** `docs/ROADMAP.md` and `docs/learning/` must be git-ignored. Verify with `git check-ignore -v docs/ROADMAP.md docs/learning/README.md`, and confirm that `git ls-files docs/` doesn't list them.
+- **Private roadmap:** `docs/ROADMAP.md` must be git-ignored. Verify with `git check-ignore -v docs/ROADMAP.md`, and confirm that `git ls-files docs/` doesn't list it.
 - **Personal data:** real email addresses or names in test data or seed data. Use `customer@example.com`-style values.
 
 Use `grep -rnIE` over the changed or tracked files with patterns such as `password|passwd|secret|token|api[_-]?key|private[_-]?key|BEGIN .*PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{36}|eyJ[A-Za-z0-9_-]{10,}`, then judge each hit by hand.
@@ -55,5 +55,3 @@ Return a concise report:
 - **Hint** on how to fix it. Describe the approach; give a tiny snippet only if the concept can't be explained otherwise.
 
 **What's done well** (2–3 points, so the developer knows what to keep doing)
-
-**One question to think about**: a short question about a concept touched by this code.
